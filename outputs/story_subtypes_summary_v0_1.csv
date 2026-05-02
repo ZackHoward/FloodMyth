@@ -1,0 +1,13 @@
+story_id,story_name,culture,region,story_type,analysis_group,include_in_core_analysis,core_survivor_package_score,expanded_flood_catastrophe_score,present_motif_score,overall_confidence
+FM-001,Genesis Flood / Noah,Israelite-Judahite,Levant,survivor-ark flood,biblical_anchor,yes,19.0,25.5,27.0,high
+FM-002,Gilgamesh Tablet XI / Utanapishtim,Mesopotamian / Babylonian-Akkadian,Mesopotamia,secret-warning ark flood,mesopotamian_cluster,yes,16.5,25.0,26.0,high
+FM-003,Atrahasis Flood,Mesopotamian / Akkadian-Babylonian,Mesopotamia,noise-cause survivor flood,mesopotamian_cluster,yes,11.5,17.0,18.5,medium
+FM-004,Eridu Genesis / Ziusudra,Sumerian / Mesopotamian,Mesopotamia,king-priest secret-warning flood,mesopotamian_cluster,yes,10.5,19.0,20.0,medium
+FM-005,Deucalion and Pyrrha,Greek / Mediterranean,Greece,survivor-chest flood,classic_survivor_flood,yes,12.5,17.0,19.5,high
+FM-006,Manu and the Fish,Indian / Sanskrit,India,animal-helper ritual-recreation flood,classic_survivor_flood,yes,10.5,12.5,15.5,high
+FM-007,Yu Controls the Flood,Chinese,China,flood-control civilization-restoration myth,flood_control,no,1.5,6.5,8.5,high
+FM-008,Popol Vuh / Destruction of the Wooden People,K'iche' Maya / Mesoamerican,Mesoamerica,failed-creation destruction flood,failed_creation,no,2.5,9.5,10.0,high
+FM-009,Huarochirí / The Llama Warns of the Flood,Andean / Quechua,"Huarochirí, Peru",animal-warning mountain-refuge flood,animal_warning_mountain_refuge,caution,9.0,13.5,16.0,high
+FM-010,Nahui Atl / Tata and Nene,Nahua / Aztec-Mexica,Central Mexico,world-age flood with survivor transformation,world_age_flood,no,10.5,17.5,22.0,high
+FM-011,Bergelmir and the Blood Flood,Norse / Icelandic,Germanic / North Atlantic,primordial blood-flood / giant-lineage reset,primordial_reset,no,4.5,10.5,11.5,medium-high
+FM-012,Nuʻu and the Hawaiian Flood,Hawaiian / Polynesian,Hawaiʻi,layered sea-flood with biblicalized ark structure,biblicalized_or_layered,caution,12.0,18.5,20.5,medium
