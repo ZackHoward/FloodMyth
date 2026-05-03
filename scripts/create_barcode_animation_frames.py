@@ -23,7 +23,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 
 FPS = 24
-TOTAL_SECONDS = 10
+TOTAL_SECONDS = 5
 FRAME_WIDTH = 1080
 FRAME_HEIGHT = 1920
 OUTPUT_DIR = Path("outputs") / "animation_frames" / "barcode_reveal_v0_1"
@@ -38,7 +38,7 @@ UNCLEAR_COLOR = "#5A5F66"
 GRID_COLOR = "#FFFFFF"
 TEXT_COLOR = "#F8FAFC"
 MUTED_TEXT_COLOR = "#CBD5E1"
-HIGHLIGHT_COLOR = "#FFFFFF"
+HIGHLIGHT_COLOR = "#39FF88"
 OUTLIER_COLOR = "#F2A900"
 SCAN_COLOR = "#9AF7FF"
 
@@ -311,7 +311,7 @@ def draw_frame(
     # for CapCut titles/subtitles outside this generated asset.
     left = 310
     right = 40
-    top = 330
+    top = 390
     bottom = 300
     barcode_width = FRAME_WIDTH - left - right
     barcode_height = FRAME_HEIGHT - top - bottom
@@ -357,12 +357,21 @@ def draw_frame(
         "Warning + Survivor": "Warning\n+ Survivor",
         "Vessel + Refuge": "Vessel\n+ Refuge",
     }
-    for group_name, center_col in group_geometry["centers"].items():
+    # These labels name the motif bands, but the text is wider than the bands.
+    # Use hand-tuned horizontal anchors so the words breathe on a phone screen.
+    group_label_positions = {
+        "Cause": 0.08,
+        "Warning + Survivor": 0.30,
+        "Vessel + Refuge": 0.50,
+        "Catastrophe": 0.72,
+        "Aftermath": 0.92,
+    }
+    for group_name in group_geometry["centers"]:
         label = group_label_map.get(group_name, group_name)
-        x = left + (center_col + 0.5) * cell_width
+        x = left + barcode_width * group_label_positions[group_name]
         draw_centered_multiline(
             draw,
-            (x, top - 78),
+            (x, top - 82),
             label,
             fonts["group"],
             blend_color(MUTED_TEXT_COLOR, BACKGROUND, 0.30 + 0.70 * label_alpha),
@@ -514,7 +523,7 @@ def main():
 
     fonts = {
         "row": load_font(31, bold=True),
-        "group": load_font(26, bold=True),
+        "group": load_font(24, bold=True),
         "legend": load_font(35, bold=False),
     }
 
